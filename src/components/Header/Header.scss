@@ -1,0 +1,41 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    align-items: center;
+}
+
+.leftSide {
+    display: flex;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.navbar {
+    & ul {
+        display: flex;
+        column-gap: 10px;
+
+        & li {
+            list-style: none;
+            
+            & .link {
+                text-decoration: none;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+}
+
+.loginBtn{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+
+    &:hover {
+        border: 1px solid red;
+    }
+}
