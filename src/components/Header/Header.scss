@@ -35,6 +35,11 @@
     padding: 15px;
     cursor: pointer;
 
+    & a {
+        text-decoration: none;
+        color: black;
+    }
+
     &:hover {
         border: 1px solid red;
     }
