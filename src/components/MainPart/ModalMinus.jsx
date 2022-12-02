@@ -5,22 +5,13 @@ import { TwoContext } from '../../context/TwoContext'
 import { body } from './MainPart'
 import { ThreeContext } from '../../context/ThreeContext';
 import { Context } from '../../context/Context';
+import { FourContext } from '../../context/FourContext';
 
 const ModalMinus = (props) => {
 
     const [context, setContext] = useContext(Context)
     const [threeContext, setThreeContext] = useContext(ThreeContext)
-
-    // const handdleAdd = () => {
-    //     const newState = body.map(obj => {
-    //         if (obj.id == threeContext.id) {
-    //             return { ...obj, quantity: threeContext.values.quantity + 10 }
-    //         }
-    //         return obj
-    //     })
-
-    //     setContext(newState)
-    // }
+    const [fourContext, setFourContext] = useContext(FourContext)
 
   return (
     <div className='modalBox'>

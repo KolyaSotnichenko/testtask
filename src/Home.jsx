@@ -11,7 +11,7 @@ const Home = () => {
   const [context, setContext] = useState([...body])
   const [twoContext, setTwoContext] = useState(false)
   const [threeContext, setThreeContext] = useState(false)
-  const [fourContext, setFourContext] = useState([])
+  const [fourContext, setFourContext] = useState()
 
   return (
     <>

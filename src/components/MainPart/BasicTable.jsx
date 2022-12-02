@@ -20,16 +20,16 @@ export const Actions = (props) => {
 
     const onClickPluss = () => {
 
-        // const newState = context.map(obj => {
-        //     if (obj.id == row.id) {
-        //         return { ...obj, quantity: row.values.quantity + 10 }
-        //     }
-        //     return obj
-        // })
+        const newState = context.map(obj => {
+            if (obj.id == row.id) {
+                return { ...obj, quantity: row.values.quantity + 10 }
+            }
+            return obj
+        })
 
         setTwoContext(true)
-        // setContext(newState)
-        setFourContext(row)
+        setContext(newState)
+        // setFourContext(newState)
         
 
     }
@@ -45,8 +45,8 @@ export const Actions = (props) => {
         })
 
         setThreeContext(true)
-        // setContext(newState)
-        setFourContext(row)
+        setContext(newState)
+        // setFourContext(row)
 
         
     }
@@ -102,14 +102,13 @@ const BasicTable = () => {
                                             return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                         })
                                     }
-                                    <td> </td>
                                 </tr>
                             )
                         })
                     }
                 </tbody>
             </table>
-            {twoContext && <ModalPlus />}
+            {twoContext && <ModalPlus/>}
             {threeContext && <ModalMinus/> }  
         </>
     )
