@@ -1,5 +1,5 @@
 import React, { useMemo, useContext, useState } from 'react'
-import { useTable, useGlobalFilter } from 'react-table'
+import { useTable, useGlobalFilter, usePagination } from 'react-table'
 import { COLUMNS } from './columns'
 import GlobalFilter from './GlobalFilter'
 import { Context } from '../../context/Context'
@@ -73,9 +73,9 @@ const BasicTable = () => {
     const tableInstance = useTable({
         columns,
         data,
-    }, useGlobalFilter)
+    }, useGlobalFilter, usePagination)
 
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow, state, setGlobalFilter } = tableInstance
+    const { getTableProps, getTableBodyProps, headerGroups, page, nextPage, previousPage, prepareRow, state, setGlobalFilter } = tableInstance
     const { globalFilter } = state
 
     return (
@@ -95,7 +95,7 @@ const BasicTable = () => {
                 </thead>
                 <tbody {...getTableBodyProps}>
                     {
-                        rows.map(row => {
+                        page.map(row => {
                             prepareRow(row)
                             return (
                                 <tr {...row.getRowProps()} className="row">
@@ -110,6 +110,10 @@ const BasicTable = () => {
                     }
                 </tbody>
             </table>
+            <div>
+                <button onClick={() => previousPage()}>Previous</button>
+                <button onClick={() => nextPage()}>Next</button>
+            </div>
             {twoContext && <ModalPlus/>}
             {threeContext && <ModalMinus/> }  
         </>

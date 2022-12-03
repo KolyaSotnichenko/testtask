@@ -6,6 +6,7 @@ import { TwoContext } from './context/TwoContext'
 import { ThreeContext } from './context/ThreeContext'
 import { FourContext } from './context/FourContext'
 import Footer from './components/Footer/Footer'
+import './App.scss'
 
 const Home = () => {
 
@@ -20,8 +21,10 @@ const Home = () => {
         <TwoContext.Provider value={[twoContext, setTwoContext]}>
           <ThreeContext.Provider value={[threeContext, setThreeContext]}>
             <FourContext.Provider value={[fourContext, setFourContext]}>
-              <Header />
-              <MainPart />
+              <div className='App'>
+                <Header />
+                <MainPart />
+              </div>
               <Footer />
             </FourContext.Provider>
           </ThreeContext.Provider>
