@@ -16,16 +16,16 @@ const navLinks = [
       url: 'menu3'
     },
     {
-        title: "Menu 3",
-        url: 'menu3'
+        title: "Menu 4",
+        url: 'menu4'
     },
     {
-        title: "Menu 3",
-        url: 'menu3'
+        title: "Menu 5",
+        url: 'menu5'
     },
     {
-        title: "Menu 3",
-        url: 'menu3'
+        title: "Menu 6",
+        url: 'menu6'
     }
 ]
 

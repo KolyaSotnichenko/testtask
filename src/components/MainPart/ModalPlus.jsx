@@ -23,32 +23,32 @@ const ModalPlus = (props) => {
         setTwoContext(false)
     }
 
-  return (
-    <div className='modalBox'>
-        <div className='darkBG' onClick={() => setTwoContext(false)}/>
-        <div className='centered'>
-            <div className='modal'>
-                <div className="modalHeader">
-                    <h5 className='heading'>Modal</h5>
-                </div>
-                <button className='closeBtn' onClick={() => setTwoContext(false)}>
-                    <RiCloseLine style={{marginBottom: '-3px'}} />
-                </button>
-                <div className="modalContent">
-                    <p>Додати 10 книг?</p>
-                </div>
-                <div className="modalActions">
-                    <div className="actionsContainer">
-                        <button className='deleteBtn' onClick={() => {
-                            add()
-                        }}>Так</button>
-                        <button className='cancelBtn' onClick={() => setTwoContext(false)}>Ні</button>
+    return (
+        <div className='modalBox'>
+            <div className='darkBG' onClick={() => setTwoContext(false)} />
+            <div className='centered'>
+                <div className='modal'>
+                    <div className="modalHeader">
+                        <h5 className='heading'>Modal</h5>
+                    </div>
+                    <button className='closeBtn' onClick={() => setTwoContext(false)}>
+                        <RiCloseLine style={{ marginBottom: '-3px' }} />
+                    </button>
+                    <div className="modalContent">
+                        <p>Додати 10 книг?</p>
+                    </div>
+                    <div className="modalActions">
+                        <div className="actionsContainer">
+                            <button className='deleteBtn' onClick={() => {
+                                add()
+                            }}>Так</button>
+                            <button className='cancelBtn' onClick={() => setTwoContext(false)}>Ні</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default ModalPlus

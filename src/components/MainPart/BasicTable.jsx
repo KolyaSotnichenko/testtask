@@ -32,7 +32,7 @@ export const Actions = (props) => {
         console.log(row)
         setContext(newState)
         // setFourContext(row)
-        
+
 
     }
 
@@ -50,7 +50,7 @@ export const Actions = (props) => {
         setContext(newState)
         // setFourContext(row)
 
-        
+
     }
 
     return (
@@ -114,8 +114,8 @@ const BasicTable = () => {
                 <button onClick={() => previousPage()}>Previous</button>
                 <button onClick={() => nextPage()}>Next</button>
             </div>
-            {twoContext && <ModalPlus/>}
-            {threeContext && <ModalMinus/> }  
+            {twoContext && <ModalPlus />}
+            {threeContext && <ModalMinus />}
         </>
     )
 }

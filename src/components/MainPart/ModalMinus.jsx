@@ -25,32 +25,32 @@ const ModalMinus = (props) => {
         setThreeContext(false)
     }
 
-  return (
-    <div className='modalBox'>
-        <div className='darkBG' onClick={() => setThreeContext(false)}/>
-        <div className='centered'>
-            <div className='modal'>
-                <div className="modalHeader">
-                    <h5 className='heading'>Modal</h5>
-                </div>
-                <button className='closeBtn' onClick={() => setThreeContext(false)}>
-                    <RiCloseLine style={{marginBottom: '-3px'}} />
-                </button>
-                <div className="modalContent">
-                    <p>Забрати 10 книг?</p>
-                </div>
-                <div className="modalActions">
-                    <div className="actionsContainer">
-                        <button className='deleteBtn' onClick={() => {
-                            take()
-                        }}>Так</button>
-                        <button className='cancelBtn' onClick={() => setThreeContext(false)}>Ні</button>
+    return (
+        <div className='modalBox'>
+            <div className='darkBG' onClick={() => setThreeContext(false)} />
+            <div className='centered'>
+                <div className='modal'>
+                    <div className="modalHeader">
+                        <h5 className='heading'>Modal</h5>
+                    </div>
+                    <button className='closeBtn' onClick={() => setThreeContext(false)}>
+                        <RiCloseLine style={{ marginBottom: '-3px' }} />
+                    </button>
+                    <div className="modalContent">
+                        <p>Забрати 10 книг?</p>
+                    </div>
+                    <div className="modalActions">
+                        <div className="actionsContainer">
+                            <button className='deleteBtn' onClick={() => {
+                                take()
+                            }}>Так</button>
+                            <button className='cancelBtn' onClick={() => setThreeContext(false)}>Ні</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default ModalMinus
