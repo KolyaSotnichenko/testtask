@@ -13,6 +13,18 @@ const ModalMinus = (props) => {
     const [threeContext, setThreeContext] = useContext(ThreeContext)
     const [fourContext, setFourContext] = useContext(FourContext)
 
+    const take = () => {
+        // const newState = context.map(obj => {
+        //     if (obj.id == fourContext.id) {
+        //         return { ...obj, quantity: fourContext.values.quantity + 10 }
+        //     }
+        //     return obj
+        // })
+
+        // setContext(newState)
+        setThreeContext(false)
+    }
+
   return (
     <div className='modalBox'>
         <div className='darkBG' onClick={() => setThreeContext(false)}/>
@@ -30,7 +42,7 @@ const ModalMinus = (props) => {
                 <div className="modalActions">
                     <div className="actionsContainer">
                         <button className='deleteBtn' onClick={() => {
-                            setThreeContext(false)
+                            take()
                         }}>Так</button>
                         <button className='cancelBtn' onClick={() => setThreeContext(false)}>Ні</button>
                     </div>

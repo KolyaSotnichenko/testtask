@@ -5,6 +5,7 @@ import {Context} from './context/Context'
 import { TwoContext } from './context/TwoContext'
 import { ThreeContext } from './context/ThreeContext'
 import { FourContext } from './context/FourContext'
+import Footer from './components/Footer/Footer'
 
 const Home = () => {
 
@@ -21,6 +22,7 @@ const Home = () => {
             <FourContext.Provider value={[fourContext, setFourContext]}>
               <Header />
               <MainPart />
+              <Footer />
             </FourContext.Provider>
           </ThreeContext.Provider>
         </TwoContext.Provider>

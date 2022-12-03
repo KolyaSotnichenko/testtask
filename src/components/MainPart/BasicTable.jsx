@@ -28,8 +28,10 @@ export const Actions = (props) => {
         })
 
         setTwoContext(true)
+
+        console.log(row)
         setContext(newState)
-        // setFourContext(newState)
+        // setFourContext(row)
         
 
     }

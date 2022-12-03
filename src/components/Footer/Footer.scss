@@ -1,0 +1,27 @@
+.footer {
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: gray;
+    width: 100%;
+
+    & ul {
+        // display: flex;
+        // column-gap: 10px;
+        columns: 100px 2;
+        float: right;
+
+        & li {
+            list-style: none;
+            
+            & .link {
+                text-decoration: none;
+                color: white;
+                &:hover {
+                    color: red;
+                }
+            }
+        }
+    }
+}
