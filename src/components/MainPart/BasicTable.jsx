@@ -1,4 +1,4 @@
-import React, { useMemo, useContext, useState } from 'react'
+import React, { useMemo, useContext } from 'react'
 import { useTable, useGlobalFilter, usePagination } from 'react-table'
 import { COLUMNS } from './columns'
 import GlobalFilter from './GlobalFilter'
@@ -11,12 +11,12 @@ import ModalMinus from './ModalMinus'
 
 export const Actions = (props) => {
 
+    const { row } = props
+
     const [context, setContext] = useContext(Context)
-    const [fourContext, setFourContext] = useContext(Context);
     const [twoContext, setTwoContext] = useContext(TwoContext)
     const [threeContext, setThreeContext] = useContext(ThreeContext)
-
-    const { row } = props
+    // const [fourContext, setFourContext] = useContext(Context);
 
     const onClickPluss = () => {
 
@@ -28,8 +28,6 @@ export const Actions = (props) => {
         })
 
         setTwoContext(true)
-
-        console.log(row)
         setContext(newState)
         // setFourContext(row)
 
@@ -110,7 +108,7 @@ const BasicTable = () => {
                     }
                 </tbody>
             </table>
-            <div>
+            <div className='pagination'>
                 <button onClick={() => previousPage()}>Previous</button>
                 <button onClick={() => nextPage()}>Next</button>
             </div>

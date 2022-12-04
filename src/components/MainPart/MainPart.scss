@@ -39,6 +39,13 @@ table th {
   color: white;
 }
 
+.pagination {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  column-gap: 20px;
+}
+
 .modalBox {
     .darkBG {
         background-color: rgba(0, 0, 0, 0.2);
