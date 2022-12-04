@@ -12,14 +12,14 @@ const ModalPlus = (props) => {
     const [fourContext, setFourContext] = useContext(FourContext)
 
     const add = () => {
-        // const newState = context.map(obj => {
-        //     if (obj.id == fourContext.id) {
-        //         return { ...obj, quantity: fourContext.values.quantity + 10 }
-        //     }
-        //     return obj
-        // })
+        const newState = context.map(obj => {
+            if (obj.id == fourContext.id) {
+                return { ...obj, quantity: fourContext.values.quantity + 10 }
+            }
+            return obj
+        })
 
-        // setContext(newState)
+        setContext(newState)
         setTwoContext(false)
     }
 

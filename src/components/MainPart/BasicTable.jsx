@@ -7,6 +7,7 @@ import './MainPart.scss'
 import ModalPlus from './ModalPlus'
 import { TwoContext } from '../../context/TwoContext'
 import { ThreeContext } from '../../context/ThreeContext'
+import { FourContext } from '../../context/FourContext'
 import ModalMinus from './ModalMinus'
 
 export const Actions = (props) => {
@@ -16,37 +17,20 @@ export const Actions = (props) => {
     const [context, setContext] = useContext(Context)
     const [twoContext, setTwoContext] = useContext(TwoContext)
     const [threeContext, setThreeContext] = useContext(ThreeContext)
-    // const [fourContext, setFourContext] = useContext(Context);
+    const [fourContext, setFourContext] = useContext(FourContext);
 
     const onClickPluss = () => {
 
-        const newState = context.map(obj => {
-            if (obj.id == row.id) {
-                return { ...obj, quantity: row.values.quantity + 10 }
-            }
-            return obj
-        })
-
         setTwoContext(true)
-        setContext(newState)
-        // setFourContext(row)
+        setFourContext(row)
 
 
     }
 
     const onCkickMinus = () => {
 
-        const newState = context.map(obj => {
-            if (obj.id == row.id && obj.quantity != 0) {
-                return { ...obj, quantity: row.values.quantity - 10 }
-            }
-
-            return obj
-        })
-
         setThreeContext(true)
-        setContext(newState)
-        // setFourContext(row)
+        setFourContext(row)
 
 
     }

@@ -1,8 +1,6 @@
 import React, { useContext } from 'react'
 import { RiCloseLine } from "react-icons/ri";
 import './MainPart'
-import { TwoContext } from '../../context/TwoContext'
-import { body } from './MainPart'
 import { ThreeContext } from '../../context/ThreeContext';
 import { Context } from '../../context/Context';
 import { FourContext } from '../../context/FourContext';
@@ -14,14 +12,14 @@ const ModalMinus = (props) => {
     const [fourContext, setFourContext] = useContext(FourContext)
 
     const take = () => {
-        // const newState = context.map(obj => {
-        //     if (obj.id == fourContext.id) {
-        //         return { ...obj, quantity: fourContext.values.quantity + 10 }
-        //     }
-        //     return obj
-        // })
+        const newState = context.map(obj => {
+            if (obj.id == fourContext.id && fourContext.values.quantity != 0) {
+                return { ...obj, quantity: fourContext.values.quantity - 10 }
+            }
+            return obj
+        })
 
-        // setContext(newState)
+        setContext(newState)
         setThreeContext(false)
     }
 
