@@ -4,11 +4,9 @@ import { COLUMNS } from './columns'
 import GlobalFilter from './GlobalFilter'
 import { Context } from '../../context/Context'
 import './MainPart.scss'
-import ModalPlus from './ModalPlus'
+import Modal from './Modal'
 import { TwoContext } from '../../context/TwoContext'
 import { ThreeContext } from '../../context/ThreeContext'
-import { FourContext } from '../../context/FourContext'
-import ModalMinus from './ModalMinus'
 
 export const Actions = (props) => {
 
@@ -16,21 +14,20 @@ export const Actions = (props) => {
 
     const [context, setContext] = useContext(Context)
     const [twoContext, setTwoContext] = useContext(TwoContext)
-    const [threeContext, setThreeContext] = useContext(ThreeContext)
-    const [fourContext, setFourContext] = useContext(FourContext);
+    const [threeContext, setThreeContext] = useContext(ThreeContext);
 
     const onClickPluss = () => {
 
-        setTwoContext(true)
-        setFourContext(row)
+        setTwoContext('add')
+        setThreeContext(row)
 
 
     }
 
     const onCkickMinus = () => {
 
-        setThreeContext(true)
-        setFourContext(row)
+        setTwoContext('subtraction')
+        setThreeContext(row)
 
 
     }
@@ -47,7 +44,6 @@ const BasicTable = () => {
 
     const [context, setContext] = useContext(Context);
     const [twoContext, setTwoContext] = useContext(TwoContext)
-    const [threeContext, setThreeContext] = useContext(ThreeContext)
 
     const columns = useMemo(() => COLUMNS, [])
     const data = useMemo(() => context, [context])
@@ -96,8 +92,8 @@ const BasicTable = () => {
                 <button onClick={() => previousPage()}>Previous</button>
                 <button onClick={() => nextPage()}>Next</button>
             </div>
-            {twoContext && <ModalPlus />}
-            {threeContext && <ModalMinus />}
+            {twoContext === 'add' && <Modal title="Додати 10 книг?" />}
+            {twoContext === 'subtraction' && <Modal title="Забрати 10 книг?" />}
         </>
     )
 }
